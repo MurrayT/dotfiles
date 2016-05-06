@@ -1,0 +1,9 @@
+[user]
+	name = Murray Tannock
+	email = murraytannock@gmail.com
+[color]
+	ui = auto
+[core]
+	autocrlf = input
+[github]
+	user = MurrayT
