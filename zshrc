@@ -19,9 +19,12 @@ eval "$(stack --bash-completion-script stack)"
 
 
 export EDITOR='vim'
+export PATH="$PATH:$HOME/bin"
 
 alias c="cd"
 alias m="mark"
 alias j="jump"
 
 alias tn="tmux new -s"
+alias tl="tmux list-sessions"
+alias ta="tmux attach -t"
