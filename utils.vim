@@ -55,6 +55,8 @@ function! utils#runFile()
     let command = 'julia %'
   elseif &filetype ==? 'python'
     let command = 'python %'
+  elseif &filetype ==? 'perl'
+    let command = 'perl %'
  else
     echom "Can't run current file (unsupported filetype: " . &filetype . ")"
   endif
