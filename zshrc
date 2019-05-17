@@ -18,8 +18,16 @@ export EDITOR='vim'
 bindkey -e
 export LESS='-XgmR'
 
+export LANG=en_NZ.UTF-8
+
 # DYLOD PATH for X11
 export DYLOD_LIBRARY_PATH="/opt/X11/lib"
+
+# ssh-agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval `ssh-agent -s`
+  ssh-add
+fi
 
 # Path management
 export PATH="$PATH:$HOME/bin"
@@ -56,14 +64,14 @@ PROMPT='%B%n:%2~%b$(git_super_status) %# '
 source ~/perl5/perlbrew/etc/bashrc
 
 # NVM
-export NVM_DIR="/Users/murraytannock/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # zsh highlighting
-source /Users/murraytannock/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/repos/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # OPAM configuration
-. /Users/murraytannock/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+. $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 eval `opam config env`
 
 # Luarocks
@@ -71,3 +79,7 @@ eval `luarocks path`
 
 # Postgres
 export PGDATA="/usr/local/var/postgres"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Jenv
+eval "$(jenv init -)"

@@ -54,7 +54,7 @@ function! utils#runFile()
   elseif &filetype ==? 'julia'
     let command = 'julia %'
   elseif &filetype ==? 'python'
-    let command = 'python %'
+    let command = 'python3 %'
   elseif &filetype ==? 'perl'
     let command = 'perl %'
  else
